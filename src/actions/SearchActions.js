@@ -20,4 +20,4 @@ export const search = (keyword) => (dispatch) => {
     .catch(({ message }) => {
       dispatch({ type: SEARCH_FAILURE, payload: { message } });
     });
-}
+};

@@ -18,19 +18,15 @@ export default (state = INITIAL_STATE, action) => {
         isFetching: true,
       };
     case SEARCH_SUCCESS:
-      const { data } = action.payload;
-
       return {
         ...state,
-        items: data,
+        items: action.payload.data,
         isFetching: false,
       };
     case SEARCH_FAILURE:
-      const { message } = action.payload;
-
       return {
         ...state,
-        errorMessage: message,
+        errorMessage: action.payload.message,
         isFetching: false,
       };
     default:

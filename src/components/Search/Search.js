@@ -18,15 +18,15 @@ const renderIcon = (loading) => (
       <ActivityIndicator
         color="#CCCCCC"
       />
-    ) : (
+    )
+      : (
         <Image
           source={icon}
           style={styles.icon}
         />
-      )
-    }
+      )}
   </View>
-)
+);
 
 export default ({
   search,
@@ -44,7 +44,7 @@ export default ({
         {renderIcon(loading)}
         <TextInput
           autoFocus
-          onChangeText={text => onChangeText(text)}
+          onChangeText={(text) => onChangeText(text)}
           value={text}
           style={styles.searchBarText}
           placeholderTextColor="#999999"

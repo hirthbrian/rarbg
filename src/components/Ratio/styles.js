@@ -10,12 +10,12 @@ export default StyleSheet.create({
     overflow: 'hidden',
   },
   barGreen: {
-    backgroundColor: '#00BC63'
+    backgroundColor: '#00BC63',
   },
   text: {
     fontSize: 16,
     color: '#CCCCCC',
     textAlign: 'right',
-    paddingBottom: 2
+    paddingBottom: 2,
   },
 });

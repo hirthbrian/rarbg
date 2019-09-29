@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  View,
   FlatList,
 } from 'react-native';
 
@@ -14,7 +13,7 @@ const renderItem = ({ item, index }) => (
     link={item.download}
     ratio={(item.seeders * 100) / (item.seeders + item.leechers)}
     size={item.size}
-    evenIndex={index % 2 == 0}
+    evenIndex={index % 2 === 0}
   />
 );
 
@@ -23,7 +22,7 @@ export default ({ torrents }) => {
     <FlatList
       data={torrents}
       renderItem={renderItem}
-      keyExtractor={k => k.title}
+      keyExtractor={(k) => k.title}
     />
   );
 };

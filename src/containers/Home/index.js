@@ -7,16 +7,14 @@ import Search from '../../components/Search';
 import TorrentList from '../../components/TorrentList';
 import styles from './styles';
 
-export default () => {
-  return (
-    <SafeAreaView
-      style={styles.container}
-    >
-      <StatusBar
-        barStyle="light-content"
-      />
-      <Search />
-      <TorrentList />
-    </SafeAreaView>
-  );
-};
+export default () => (
+  <SafeAreaView
+    style={styles.container}
+  >
+    <StatusBar
+      barStyle="light-content"
+    />
+    <Search />
+    <TorrentList />
+  </SafeAreaView>
+);
