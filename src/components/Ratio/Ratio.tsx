@@ -5,22 +5,27 @@ import {
 } from 'react-native';
 
 import styles from './styles';
+import { bytesToSize } from '../../utils';
 
-function Ratio({ ratio, size }: { ratio: number, size: string }) {
+type RatioProps = {
+  ratio: number,
+  size: number,
+}
+
+const Ratio = ({ size, ratio }: RatioProps) => {
   return (
     <View>
+
       <Text
         style={styles.text}
       >
-        {size}
+        {bytesToSize(size)}
       </Text>
       <View
         style={styles.barContainer}
       >
         <View
-          style={[styles.barGreen, {
-            flex: ratio / 100,
-          }]}
+          style={[styles.barGreen, { flex: ratio }]}
         />
       </View>
     </View>

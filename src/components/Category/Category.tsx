@@ -12,7 +12,7 @@ type CategoryProps = {
   evenIndex?: boolean,
 }
 
-function Category({ name, evenIndex }: CategoryProps) {
+const Category = ({ name, evenIndex }: CategoryProps) => {
   return (
     <View
       style={styles.container}

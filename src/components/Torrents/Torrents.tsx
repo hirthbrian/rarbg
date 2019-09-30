@@ -27,8 +27,7 @@ const renderItem = ({ item, index }: { item: TorrentProps, index: number }) => (
   />
 );
 
-function Torrents({ torrents }: { torrents: Array<TorrentProps> }) {
-  console.log('torrents', torrents)
+const Torrents = ({ torrents }: { torrents: Array<TorrentProps> }) => {
   return (
     <FlatList
       data={torrents}

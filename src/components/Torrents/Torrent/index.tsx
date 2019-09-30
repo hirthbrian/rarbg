@@ -7,7 +7,7 @@ import {
 } from 'react-native';
 
 import styles from './styles';
-import { bytesToSize, Color } from '../../../utils';
+import { Color } from '../../../utils';
 import Category from '../../Category';
 import Ratio from '../../Ratio';
 
@@ -20,7 +20,7 @@ type TorrentProps = {
   evenIndex: boolean,
 };
 
-function Torrent({ title, category, link, ratio, size, evenIndex }: TorrentProps) {
+const Torrent = ({ title, category, link, ratio, size, evenIndex }: TorrentProps) => {
   return (
     <TouchableHighlight
       onPress={() => Linking.openURL(link)}
@@ -41,8 +41,8 @@ function Torrent({ title, category, link, ratio, size, evenIndex }: TorrentProps
             evenIndex={evenIndex}
           />
           <Ratio
-            ratio={ratio}
-            size={bytesToSize(size)}
+            ratio={ratio / 100}
+            size={size}
           />
         </View>
         <Text

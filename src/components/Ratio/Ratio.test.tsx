@@ -4,8 +4,8 @@ import renderer from 'react-test-renderer';
 import Ratio from './Ratio';
 
 describe('<Ratio />', () => {
-  it('should do something', () => {
-    // const tree = renderer.create(<Ratio name="test" />);
-    // expect(tree).toMatchSnapshot();
-  })
+  it('renders correcly', () => {
+    const tree = renderer.create(<Ratio ratio={0.5} size={102400} />);
+    expect(tree).toMatchSnapshot();
+  });
 });

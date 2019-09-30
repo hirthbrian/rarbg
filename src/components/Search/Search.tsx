@@ -33,7 +33,7 @@ const renderIcon = (loading: boolean) => (
   </View>
 );
 
-function Search({ search, loading }: SearchType) {
+const Search = ({ search, loading }: SearchType) => {
   const [text, onChangeText] = useState('');
 
   return (

@@ -7,5 +7,5 @@ describe('<Category />', () => {
   it('renders correcly', () => {
     const tree = renderer.create(<Category name="test" />);
     expect(tree).toMatchSnapshot();
-  })
+  });
 });
