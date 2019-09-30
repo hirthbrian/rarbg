@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { Color } from '../../utils';
 
 export default StyleSheet.create({
   container: {
@@ -6,7 +7,7 @@ export default StyleSheet.create({
     paddingBottom: 7,
   },
   text: {
-    color: '#CCCCCC',
+    color: Color.LightGrey,
     paddingHorizontal: 7,
     paddingVertical: 3,
     borderRadius: 4,

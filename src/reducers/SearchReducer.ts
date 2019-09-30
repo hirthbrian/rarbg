@@ -26,6 +26,7 @@ export default (state = INITIAL_STATE, action) => {
     case SEARCH_FAILURE:
       return {
         ...state,
+        items: [],
         errorMessage: action.payload.message,
         isFetching: false,
       };

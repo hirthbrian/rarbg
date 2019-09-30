@@ -10,7 +10,12 @@ import styles from './styles';
 
 const icon = require('../../assets/glass.png');
 
-const renderIcon = (loading) => (
+type SearchType = {
+  search: Function,
+  loading: boolean,
+};
+
+const renderIcon = (loading: boolean) => (
   <View
     style={styles.iconContainer}
   >
@@ -28,10 +33,7 @@ const renderIcon = (loading) => (
   </View>
 );
 
-export default ({
-  search,
-  loading,
-}) => {
+function Search({ search, loading }: SearchType) {
   const [text, onChangeText] = useState('');
 
   return (
@@ -56,3 +58,5 @@ export default ({
     </View>
   );
 };
+
+export default Search;

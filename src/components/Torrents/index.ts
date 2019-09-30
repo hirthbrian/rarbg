@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import TorrentList from './TorrentList';
+import Torrents from './Torrents';
 
 const mapStateToProps = ({ search }) => ({
   torrents: search.items,
@@ -15,4 +15,4 @@ const mapDispatchToProps = (dispatch) => (
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(TorrentList);
+)(Torrents);

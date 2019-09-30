@@ -6,10 +6,7 @@ import {
 
 import styles from './styles';
 
-export default ({
-  ratio,
-  size,
-}) => {
+function Ratio({ ratio, size }: { ratio: number, size: string }) {
   return (
     <View>
       <Text
@@ -29,3 +26,6 @@ export default ({
     </View>
   );
 };
+
+export default Ratio;
+

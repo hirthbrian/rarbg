@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { Color } from '../../../utils';
 
 export default StyleSheet.create({
   container: {
@@ -9,6 +10,6 @@ export default StyleSheet.create({
   text: {
     flex: 1,
     fontSize: 18,
-    color: '#CCCCCC',
+    color: Color.LightGrey,
   },
 });

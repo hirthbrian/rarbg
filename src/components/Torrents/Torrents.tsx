@@ -1,13 +1,23 @@
 import React from 'react';
 import {
+  View,
   FlatList,
 } from 'react-native';
 
-import TorrentItem from '../TorrentItem'
+import Torrent from './Torrent'
 import styles from './styles';
 
-const renderItem = ({ item, index }) => (
-  <TorrentItem
+type TorrentProps = {
+  title: string,
+  category: string,
+  download: string,
+  seeders: number,
+  leechers: number,
+  size: number,
+};
+
+const renderItem = ({ item, index }: { item: TorrentProps, index: number }) => (
+  <Torrent
     title={item.title}
     category={item.category}
     link={item.download}
@@ -17,7 +27,8 @@ const renderItem = ({ item, index }) => (
   />
 );
 
-export default ({ torrents }) => {
+function Torrents({ torrents }: { torrents: Array<TorrentProps> }) {
+  console.log('torrents', torrents)
   return (
     <FlatList
       data={torrents}
@@ -26,3 +37,5 @@ export default ({ torrents }) => {
     />
   );
 };
+
+export default Torrents;

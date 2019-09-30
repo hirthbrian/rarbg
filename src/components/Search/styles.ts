@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { Color } from '../../utils';
 
 export default StyleSheet.create({
   container: {
@@ -8,12 +9,12 @@ export default StyleSheet.create({
     padding: 10,
     borderRadius: 4,
     flexDirection: 'row',
-    backgroundColor: '#464545',
+    backgroundColor: Color.MediumGrey,
   },
   searchBarText: {
     flex: 1,
     fontSize: 18,
-    color: '#CCCCCC',
+    color: Color.LightGrey,
     paddingLeft: 10,
   },
   iconContainer: {
@@ -21,7 +22,7 @@ export default StyleSheet.create({
     height: 20,
   },
   icon: {
-    tintColor: '#CCCCCC',
+    tintColor: Color.LightGrey,
     width: 20,
     height: 20,
   },

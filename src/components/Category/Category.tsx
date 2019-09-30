@@ -5,18 +5,21 @@ import {
 } from 'react-native';
 
 import styles from './styles';
+import { Color } from '../../utils';
 
-export default ({
-  name,
-  evenIndex
-}) => {
+type CategoryProps = {
+  name: string,
+  evenIndex?: boolean,
+}
+
+function Category({ name, evenIndex }: CategoryProps) {
   return (
     <View
       style={styles.container}
     >
       <Text
         style={[styles.text, {
-          backgroundColor: evenIndex ? '#2D2D2D' : '#3B3B3B',
+          backgroundColor: evenIndex ? Color.DarkGrey : Color.VeryDarkGrey,
         }]}
       >
         {name}
@@ -24,3 +27,5 @@ export default ({
     </View>
   );
 };
+
+export default Category;

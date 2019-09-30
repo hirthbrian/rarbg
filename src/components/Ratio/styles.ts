@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { Color } from '../../utils';
 
 export default StyleSheet.create({
   barContainer: {
@@ -6,15 +7,15 @@ export default StyleSheet.create({
     width: 75,
     borderRadius: 3,
     flexDirection: 'row',
-    backgroundColor: '#FF7518',
+    backgroundColor: Color.Orange,
     overflow: 'hidden',
   },
   barGreen: {
-    backgroundColor: '#00BC63',
+    backgroundColor: Color.Green,
   },
   text: {
     fontSize: 16,
-    color: '#CCCCCC',
+    color: Color.LightGrey,
     textAlign: 'right',
     paddingBottom: 2,
   },
