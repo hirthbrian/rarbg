@@ -20,38 +20,49 @@ type TorrentProps = {
   evenIndex: boolean,
 };
 
-const Torrent = ({ title, category, link, ratio, size, evenIndex }: TorrentProps) => (
-  <TouchableHighlight
-    onPress={() => Linking.openURL(link)}
-  >
-    <View
-      style={[styles.container, {
-        backgroundColor: evenIndex ? Color.VeryDarkGrey : Color.DarkGrey,
-      }]}
+const Torrent = ({
+  title,
+  category,
+  link,
+  ratio,
+  size,
+  evenIndex,
+}: TorrentProps) => {
+  const ratioPercentage = ratio / 100;
+
+  return (
+    <TouchableHighlight
+      onPress={() => Linking.openURL(link)}
     >
       <View
-        style={{
-          flexDirection: 'row',
-          justifyContent: 'space-between',
-        }}
+        style={[styles.container, {
+          backgroundColor: evenIndex ? Color.VeryDarkGrey : Color.DarkGrey,
+        }]}
       >
-        <Category
-          name={category}
-          evenIndex={evenIndex}
-        />
-        <Ratio
-          ratio={ratio / 100}
-          size={size}
-        />
+        <View
+          style={{
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+          }}
+        >
+          <Category
+            name={category}
+            evenIndex={evenIndex}
+          />
+          <Ratio
+            ratio={ratioPercentage}
+            size={size}
+          />
+        </View>
+        <Text
+          numberOfLines={2}
+          style={styles.text}
+        >
+          {title}
+        </Text>
       </View>
-      <Text
-        numberOfLines={2}
-        style={styles.text}
-      >
-        {title}
-      </Text>
-    </View>
-  </TouchableHighlight>
-);
+    </TouchableHighlight>
+  );
+};
 
 export default Torrent;
