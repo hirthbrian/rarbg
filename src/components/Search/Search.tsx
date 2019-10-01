@@ -46,7 +46,7 @@ const Search = ({ search, loading }: SearchType) => {
         {renderIcon(loading)}
         <TextInput
           autoFocus
-          onChangeText={(text) => onChangeText(text)}
+          onChangeText={onChangeText}
           value={text}
           style={styles.searchBarText}
           placeholderTextColor="#999999"

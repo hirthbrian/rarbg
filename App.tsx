@@ -16,12 +16,10 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = createStore(reducers, {}, composeEnhancers(applyMiddleware(thunk)));
 
-const App = () => {
-  return (
-    <Provider store={store}>
-      <Home />
-    </Provider>
-  );
-}
+const App = () => (
+  <Provider store={store}>
+    <Home />
+  </Provider>
+);
 
 export default App;

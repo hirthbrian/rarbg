@@ -6,11 +6,11 @@ import {
 } from '../../actions';
 import Search from './Search';
 
-const mapStateToProps = ({ search }) => ({
-  loading: search.isFetching,
+const mapStateToProps = state => ({
+  loading: state.search.isFetching,
 });
 
-const mapDispatchToProps = (dispatch) => (
+const mapDispatchToProps = dispatch => (
   bindActionCreators({
     search,
   }, dispatch)

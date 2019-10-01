@@ -1,11 +1,9 @@
 import React from 'react';
 import {
-  View,
   FlatList,
 } from 'react-native';
 
-import Torrent from './Torrent'
-import styles from './styles';
+import Torrent from './Torrent';
 
 type TorrentProps = {
   title: string,
@@ -27,14 +25,12 @@ const renderItem = ({ item, index }: { item: TorrentProps, index: number }) => (
   />
 );
 
-const Torrents = ({ torrents }: { torrents: Array<TorrentProps> }) => {
-  return (
-    <FlatList
-      data={torrents}
-      renderItem={renderItem}
-      keyExtractor={(k) => k.title}
-    />
-  );
-};
+const Torrents = ({ torrents }: { torrents: Array<TorrentProps> }) => (
+  <FlatList
+    data={torrents}
+    renderItem={renderItem}
+    keyExtractor={k => k.title}
+  />
+);
 
 export default Torrents;

@@ -7,7 +7,7 @@ const mapStateToProps = ({ search }) => ({
   torrents: search.items,
 });
 
-const mapDispatchToProps = (dispatch) => (
+const mapDispatchToProps = dispatch => (
   bindActionCreators({
   }, dispatch)
 );

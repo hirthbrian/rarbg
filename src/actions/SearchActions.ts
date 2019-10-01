@@ -1,3 +1,5 @@
+import { Action } from 'redux';
+import { ThunkAction } from 'redux-thunk';
 import axios from 'axios';
 
 import {
@@ -6,7 +8,9 @@ import {
   SEARCH_FAILURE,
 } from './types';
 
-export const search = (keyword: string) => (dispatch) => {
+export const search = (
+  keyword: string,
+): ThunkAction<void, AppState, null, Action<string>> => dispatch => {
   dispatch({ type: SEARCH_REQUEST });
   axios
     .get('https://us-central1-rarbg-d56e1.cloudfunctions.net/search', {
@@ -25,3 +29,5 @@ export const search = (keyword: string) => (dispatch) => {
       dispatch({ type: SEARCH_FAILURE, payload: { message } });
     });
 };
+
+export const test = () => { };
