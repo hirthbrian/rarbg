@@ -4,12 +4,13 @@ import { Color } from '../../utils';
 export default StyleSheet.create({
   container: {
     flexDirection: 'row',
-    paddingBottom: 7,
+    paddingHorizontal: 15,
+    paddingVertical: 10,
   },
   text: {
+    flex: 1,
+    fontSize: 18,
+    paddingRight: 15,
     color: Color.LightGrey,
-    paddingHorizontal: 7,
-    paddingVertical: 3,
-    borderRadius: 4,
   },
 });

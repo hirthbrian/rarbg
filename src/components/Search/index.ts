@@ -1,16 +1,18 @@
+import { bindActionCreators, Dispatch } from 'redux';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 
+import { AppState } from '../../reducers';
 import {
   search,
 } from '../../actions';
 import Search from './Search';
+import { ChatActionTypes } from '../../actions/types';
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state: AppState) => ({
   loading: state.search.isFetching,
 });
 
-const mapDispatchToProps = dispatch => (
+const mapDispatchToProps = (dispatch: Dispatch<ChatActionTypes>) => (
   bindActionCreators({
     search,
   }, dispatch)

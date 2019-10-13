@@ -2,15 +2,17 @@ import {
   SEARCH_REQUEST,
   SEARCH_SUCCESS,
   SEARCH_FAILURE,
+  ISearchState,
+  ChatActionTypes,
 } from '../actions/types';
 
-const INITIAL_STATE = {
-  items: [],
+const initialState: ISearchState = {
+  torrents: [],
   isFetching: false,
-  errorMessage: null,
+  errorMessage: '',
 };
 
-export default (state = INITIAL_STATE, action) => {
+export default (state = initialState, action: ChatActionTypes): ISearchState => {
   switch (action.type) {
     case SEARCH_REQUEST:
       return {
@@ -20,15 +22,15 @@ export default (state = INITIAL_STATE, action) => {
     case SEARCH_SUCCESS:
       return {
         ...state,
-        items: action.payload.data,
+        torrents: action.payload.torrents,
         isFetching: false,
       };
     case SEARCH_FAILURE:
       return {
         ...state,
-        items: [],
-        errorMessage: action.payload.message,
+        torrents: [],
         isFetching: false,
+        errorMessage: action.payload.message,
       };
     default:
       return state;

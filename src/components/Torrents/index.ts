@@ -1,18 +1,12 @@
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 
 import Torrents from './Torrents';
+import { AppState } from '../../reducers';
 
-const mapStateToProps = ({ search }) => ({
-  torrents: search.items,
+const mapStateToProps = (state: AppState) => ({
+  items: state.search.torrents,
 });
-
-const mapDispatchToProps = dispatch => (
-  bindActionCreators({
-  }, dispatch)
-);
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps,
 )(Torrents);

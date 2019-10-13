@@ -3,7 +3,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 
-import reducers from './src/reducers';
+import rootReducer from './src/reducers';
 import Home from './src/containers/Home';
 
 declare global {
@@ -14,7 +14,7 @@ declare global {
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-const store = createStore(reducers, {}, composeEnhancers(applyMiddleware(thunk)));
+const store = createStore(rootReducer, {}, composeEnhancers(applyMiddleware(thunk)));
 
 const App = () => (
   <Provider store={store}>

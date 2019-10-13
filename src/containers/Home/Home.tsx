@@ -11,9 +11,7 @@ const Home = () => (
   <SafeAreaView
     style={styles.container}
   >
-    <StatusBar
-      barStyle="light-content"
-    />
+    <StatusBar barStyle="light-content" />
     <Search />
     <Torrents />
   </SafeAreaView>

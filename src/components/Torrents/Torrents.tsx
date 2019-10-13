@@ -1,34 +1,28 @@
 import React from 'react';
 import {
+  View,
   FlatList,
 } from 'react-native';
 
-import Torrent from './Torrent';
+import Torrent from '../Torrent';
+import styles from './styles';
+import { ITorrent } from '../../actions/types';
 
-type TorrentProps = {
-  title: string,
-  category: string,
-  download: string,
-  seeders: number,
-  leechers: number,
-  size: number,
-};
-
-const renderItem = ({ item, index }: { item: TorrentProps, index: number }) => (
+const renderItem = ({ item }: { item: ITorrent }) => (
   <Torrent
     title={item.title}
-    category={item.category}
-    link={item.download}
-    ratio={(item.seeders * 100) / (item.seeders + item.leechers)}
     size={item.size}
-    evenIndex={index % 2 === 0}
+    magnetLink={item.magnetLink}
   />
 );
 
-const Torrents = ({ torrents }: { torrents: Array<TorrentProps> }) => (
+const renderSeparator = () => <View style={styles.separator} />;
+
+const Torrents = ({ items }: { items: ITorrent[] }) => (
   <FlatList
-    data={torrents}
+    data={items}
     renderItem={renderItem}
+    ItemSeparatorComponent={renderSeparator}
     keyExtractor={k => k.title}
   />
 );

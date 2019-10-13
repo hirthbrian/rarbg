@@ -7,26 +7,18 @@ import {
 import styles from './styles';
 import { bytesToSize } from '../../utils';
 
-type RatioProps = {
-  ratio: number,
+type SizeProps = {
   size: number,
 };
 
-const Ratio = ({ size, ratio }: RatioProps) => (
+const Size = ({ size }: SizeProps) => (
   <View>
     <Text
       style={styles.text}
     >
       {bytesToSize(size)}
     </Text>
-    <View
-      style={styles.barContainer}
-    >
-      <View
-        style={[styles.barGreen, { flex: ratio }]}
-      />
-    </View>
   </View>
 );
 
-export default Ratio;
+export default Size;

@@ -1,11 +1,11 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import Category from './Category';
+import Size from './Size';
 
-describe('<Category />', () => {
+describe('<Size />', () => {
   it('renders correcly', () => {
-    const tree = renderer.create(<Category name="test" />);
+    const tree = renderer.create(<Size size={102400} />);
     expect(tree).toMatchSnapshot();
   });
 });
