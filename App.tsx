@@ -1,25 +1,7 @@
 import React from 'react';
-import { createStore, applyMiddleware, compose } from 'redux';
-import { Provider } from 'react-redux';
-import thunk from 'redux-thunk';
 
-import rootReducer from './src/reducers';
-import Home from './src/containers/Home';
+import Home from './src/screens/Home';
 
-declare global {
-  interface Window {
-    __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: typeof compose;
-  }
-}
-
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-
-const store = createStore(rootReducer, {}, composeEnhancers(applyMiddleware(thunk)));
-
-const App = () => (
-  <Provider store={store}>
-    <Home />
-  </Provider>
-);
+const App = () => <Home />;
 
 export default App;
