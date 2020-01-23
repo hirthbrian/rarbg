@@ -40,10 +40,10 @@ const styles = StyleSheet.create({
     backgroundColor: Color.Green,
   },
   text: {
-    fontSize: 16,
-    color: Color.LightGrey,
+    color: Color.Green,
     textAlign: 'right',
     paddingBottom: 2,
+    fontFamily: 'inter-regular',
   },
 });
 

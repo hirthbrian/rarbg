@@ -8,8 +8,7 @@ import {
 } from 'react-native';
 
 import { Color } from '../utils';
-
-const icon = require('../assets/glass.png');
+import Glass from './icons/Glass';
 
 function SearchBar({
   onSearch,
@@ -24,9 +23,10 @@ function SearchBar({
       <View
         style={styles.searchBarContainer}
       >
-        <Image
-          source={icon}
-          style={styles.icon}
+        <Glass
+          width={15}
+          height={15}
+          color={Color.White}
         />
         <TextInput
           autoFocus
@@ -34,12 +34,12 @@ function SearchBar({
           value={text}
           style={styles.searchBarText}
           placeholderTextColor="#999999"
-          placeholder="Search by title"
+          placeholder="Search by title..."
           keyboardAppearance="dark"
           onSubmitEditing={() => onSearch(text)}
         />
         {isLoading && (
-          <ActivityIndicator color="#CCCCCC" />
+          <ActivityIndicator color={Color.White} />
         )}
       </View>
     </View>
@@ -49,23 +49,23 @@ function SearchBar({
 const styles = StyleSheet.create({
   container: {
     padding: 10,
+    borderBottomColor: Color.LightBlack,
+    borderBottomWidth: 1,
   },
   searchBarContainer: {
-    padding: 10,
-    borderRadius: 10,
+    padding: 15,
+    paddingVertical: 12,
+    borderRadius: 30,
     flexDirection: 'row',
-    backgroundColor: Color.MediumGrey,
+    alignItems: 'center',
+    backgroundColor: Color.LightBlack,
   },
   searchBarText: {
     flex: 1,
     fontSize: 18,
-    color: Color.LightGrey,
+    color: Color.White,
     paddingHorizontal: 10,
-  },
-  icon: {
-    tintColor: Color.LightGrey,
-    width: 20,
-    height: 20,
+    fontFamily: 'inter-regular',
   },
 });
 

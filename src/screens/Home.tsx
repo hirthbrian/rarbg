@@ -7,7 +7,7 @@ import {
 import axios from 'axios';
 
 import SearchBar from '../components/SearchBar';
-import Torrents from '../components/Torrents';
+import TorrentList from '../components/TorrentList';
 import { Color, searchUrl } from '../utils';
 
 class Home extends React.Component {
@@ -50,7 +50,7 @@ class Home extends React.Component {
           isLoading={isLoading}
           onSearch={this.onSearch}
         />
-        <Torrents
+        <TorrentList
           items={results}
         />
       </SafeAreaView>
@@ -61,7 +61,7 @@ class Home extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Color.VeryDarkGrey,
+    backgroundColor: Color.Black,
   },
 });
 

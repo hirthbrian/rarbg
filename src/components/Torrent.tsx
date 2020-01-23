@@ -20,9 +20,7 @@ function Torrent({
       onPress={() => Linking.openURL(magnetLink)}
     >
       <View
-        style={[styles.container, {
-          backgroundColor: Color.VeryDarkGrey,
-        }]}
+        style={styles.container}
       >
         <Text
           numberOfLines={2}
@@ -40,15 +38,15 @@ function Torrent({
 
 const styles = StyleSheet.create({
   container: {
+    padding: 15,
     flexDirection: 'row',
-    paddingHorizontal: 15,
-    paddingVertical: 10,
+    backgroundColor: Color.Black,
   },
   text: {
     flex: 1,
-    fontSize: 18,
     paddingRight: 15,
-    color: Color.LightGrey,
+    color: Color.White,
+    fontFamily: 'inter-regular',
   },
 });
 

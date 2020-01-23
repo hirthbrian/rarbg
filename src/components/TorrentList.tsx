@@ -8,7 +8,7 @@ import {
 import Torrent, { TorrentType } from './Torrent';
 import { Color } from '../utils';
 
-function Torrents({ items }: TorrentsType) {
+function TorrentList({ items }: TorrentListType) {
   const renderItem = ({ item }: { item: TorrentType }) => (
     <Torrent
       title={item.title}
@@ -31,14 +31,15 @@ function Torrents({ items }: TorrentsType) {
 
 const styles = StyleSheet.create({
   separator: {
-    backgroundColor: Color.DarkGrey,
+    width: 80,
     marginLeft: 15,
+    backgroundColor: Color.LightBlack,
     height: StyleSheet.hairlineWidth,
   },
 });
 
-interface TorrentsType {
+interface TorrentListType {
   items: TorrentType[],
 };
 
-export default Torrents;
+export default TorrentList;
