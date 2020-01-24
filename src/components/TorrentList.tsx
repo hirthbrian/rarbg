@@ -8,6 +8,15 @@ import {
 import Torrent, { TorrentType } from './Torrent';
 import { Color } from '../utils';
 
+const styles = StyleSheet.create({
+  separator: {
+    width: 80,
+    marginLeft: 15,
+    backgroundColor: Color.LightBlack,
+    height: StyleSheet.hairlineWidth,
+  },
+});
+
 function TorrentList({ items }: TorrentListType) {
   const renderItem = ({ item }: { item: TorrentType }) => (
     <Torrent
@@ -27,19 +36,10 @@ function TorrentList({ items }: TorrentListType) {
       keyExtractor={k => k.title}
     />
   );
-};
-
-const styles = StyleSheet.create({
-  separator: {
-    width: 80,
-    marginLeft: 15,
-    backgroundColor: Color.LightBlack,
-    height: StyleSheet.hairlineWidth,
-  },
-});
+}
 
 interface TorrentListType {
   items: TorrentType[],
-};
+}
 
 export default TorrentList;

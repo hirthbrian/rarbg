@@ -10,6 +10,20 @@ import {
 import { Color } from '../utils';
 import Size from './Size';
 
+const styles = StyleSheet.create({
+  container: {
+    padding: 15,
+    flexDirection: 'row',
+    backgroundColor: Color.Black,
+  },
+  text: {
+    flex: 1,
+    paddingRight: 15,
+    color: Color.White,
+    fontFamily: 'inter-regular',
+  },
+});
+
 function Torrent({
   size,
   title,
@@ -33,27 +47,13 @@ function Torrent({
         />
       </View>
     </TouchableHighlight>
-  )
-};
-
-const styles = StyleSheet.create({
-  container: {
-    padding: 15,
-    flexDirection: 'row',
-    backgroundColor: Color.Black,
-  },
-  text: {
-    flex: 1,
-    paddingRight: 15,
-    color: Color.White,
-    fontFamily: 'inter-regular',
-  },
-});
+  );
+}
 
 export interface TorrentType {
   title: string,
   size: number,
   magnetLink: string,
-};
+}
 
 export default Torrent;

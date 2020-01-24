@@ -10,11 +10,21 @@ import SearchBar from '../components/SearchBar';
 import TorrentList from '../components/TorrentList';
 import { Color, searchUrl } from '../utils';
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: Color.Black,
+  },
+});
+
 class Home extends React.Component {
-  state = {
-    isLoading: false,
-    results: [],
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      isLoading: false,
+      results: [],
+    };
+  }
 
   onSearch = async (keyword: string) => {
     this.setState({ isLoading: true });
@@ -23,17 +33,16 @@ class Home extends React.Component {
       const { data } = await axios.get(searchUrl, { params: { keyword } });
 
       if (data.error) {
-        console.log(data.error);
+        // console.log(data.error);
       } else {
-        console.log('data', data)
         this.setState({ results: data });
       }
     } catch (error) {
-      console.log(error.message);
+      // console.log(error.message);
     }
 
     this.setState({ isLoading: false });
-  }
+  };
 
   render() {
     const {
@@ -56,13 +65,6 @@ class Home extends React.Component {
       </SafeAreaView>
     );
   }
-};
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: Color.Black,
-  },
-});
+}
 
 export default Home;

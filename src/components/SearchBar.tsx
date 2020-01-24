@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import {
   View,
-  Image,
   TextInput,
   StyleSheet,
   ActivityIndicator,
@@ -9,6 +8,29 @@ import {
 
 import { Color } from '../utils';
 import Glass from './icons/Glass';
+
+const styles = StyleSheet.create({
+  container: {
+    padding: 10,
+    borderBottomColor: Color.LightBlack,
+    borderBottomWidth: 1,
+  },
+  searchBarContainer: {
+    padding: 15,
+    paddingVertical: 12,
+    borderRadius: 30,
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: Color.LightBlack,
+  },
+  searchBarText: {
+    flex: 1,
+    fontSize: 18,
+    color: Color.White,
+    paddingHorizontal: 10,
+    fontFamily: 'inter-regular',
+  },
+});
 
 function SearchBar({
   onSearch,
@@ -44,34 +66,11 @@ function SearchBar({
       </View>
     </View>
   );
-};
-
-const styles = StyleSheet.create({
-  container: {
-    padding: 10,
-    borderBottomColor: Color.LightBlack,
-    borderBottomWidth: 1,
-  },
-  searchBarContainer: {
-    padding: 15,
-    paddingVertical: 12,
-    borderRadius: 30,
-    flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: Color.LightBlack,
-  },
-  searchBarText: {
-    flex: 1,
-    fontSize: 18,
-    color: Color.White,
-    paddingHorizontal: 10,
-    fontFamily: 'inter-regular',
-  },
-});
+}
 
 interface SearchBarType {
   onSearch: (text: string) => {},
   isLoading: boolean,
-};
+}
 
 export default SearchBar;
