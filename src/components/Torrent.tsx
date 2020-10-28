@@ -3,49 +3,68 @@ import {
   View,
   Text,
   Linking,
-  StyleSheet,
   TouchableHighlight,
 } from 'react-native';
+import styled from 'styled-components/native';
+import moment from "moment";
 
-import { Color } from '../utils';
-import Size from './Size';
+import { Color, bytesToSize } from '../utils';
 
-const styles = StyleSheet.create({
-  container: {
-    padding: 15,
-    flexDirection: 'row',
-    backgroundColor: Color.Black,
-  },
-  text: {
-    flex: 1,
-    paddingRight: 15,
-    color: Color.White,
-    fontFamily: 'inter-regular',
-  },
-});
+const Container = styled.View`
+  padding: 15px;
+  background-color: ${Color.Black};
+`
+
+const Title = styled.Text`
+  flex: 1;
+  padding-right: 15px;
+  color: ${Color.White};
+  font-family: 'inter-regular';
+`
+
+const Size = styled.Text`
+  color: ${Color.Green};
+  font-family: 'inter-regular';
+`
 
 function Torrent({
   size,
   title,
+  category,
+  seeders,
+  leechers,
+  pubdate,
   magnetLink,
 }: TorrentType) {
   return (
     <TouchableHighlight
       onPress={() => Linking.openURL(magnetLink)}
     >
-      <View
-        style={styles.container}
-      >
-        <Text
+      <Container>
+
+        <Title
           numberOfLines={2}
-          style={styles.text}
         >
           {title}
-        </Text>
-        <Size
-          size={size}
-        />
-      </View>
+        </Title>
+
+        <Size>
+          {bytesToSize(size)}
+        </Size>
+
+        <Title>
+          {category}
+        </Title>
+
+        <Title>
+          {`${seeders}/${leechers}`}
+        </Title>
+
+        <Title>
+          {moment(pubdate).toString()}
+        </Title>
+
+      </Container>
     </TouchableHighlight>
   );
 }
@@ -54,6 +73,10 @@ export interface TorrentType {
   title: string,
   size: number,
   magnetLink: string,
+  category: string,
+  seeders: number,
+  leechers: number,
+  pubdate: string,
 }
 
 export default Torrent;

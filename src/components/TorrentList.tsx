@@ -23,6 +23,10 @@ function TorrentList({ items }: TorrentListType) {
       title={item.title}
       size={item.size}
       magnetLink={item.magnetLink}
+      category={item.category}
+      leechers={item.leechers}
+      seeders={item.seeders}
+      pubdate={item.pubdate}
     />
   );
 
