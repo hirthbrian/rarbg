@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   StatusBar,
   StyleSheet,
@@ -8,26 +8,22 @@ import axios from 'axios';
 
 import SearchBar from '../components/SearchBar';
 import TorrentList from '../components/TorrentList';
-import { Color, searchUrl } from '../utils';
+import { RootSiblingParent } from 'react-native-root-siblings';
+import { COLORS, searchUrl } from '../utils';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Color.Black,
+    backgroundColor: COLORS.black,
   },
 });
 
-class Home extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isLoading: false,
-      results: [],
-    };
-  }
+function Home() {
+  const [loading, setLoading] = useState(false);
+  const [results, setResults] = useState([]);
 
-  onSearch = async (keyword: string) => {
-    this.setState({ isLoading: true });
+  const onSearch = async (keyword: string) => {
+    setLoading(true);
 
     try {
       const { data } = await axios.get(searchUrl, { params: { keyword } });
@@ -35,36 +31,28 @@ class Home extends React.Component {
       if (data.error) {
         // console.log(data.error);
       } else {
-        this.setState({ results: data });
+        setResults(data);
       }
     } catch (error) {
       // console.log(error.message);
     }
-
-    this.setState({ isLoading: false });
+    setLoading(false);
   };
 
-  render() {
-    const {
-      isLoading,
-      results,
-    } = this.state;
-
-    return (
+  return (
+    <RootSiblingParent>
       <SafeAreaView
         style={styles.container}
       >
         <StatusBar barStyle="light-content" />
         <SearchBar
-          isLoading={isLoading}
-          onSearch={this.onSearch}
+          loading={loading}
+          onSearch={onSearch}
         />
-        <TorrentList
-          items={results}
-        />
+        <TorrentList items={results} />
       </SafeAreaView>
-    );
-  }
+    </RootSiblingParent>
+  );
 }
 
 export default Home;

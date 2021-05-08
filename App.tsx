@@ -1,28 +1,20 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import * as Font from 'expo-font';
 
 import Home from './src/screens/Home';
 
-class App extends React.Component {
-  state = {
-    fontLoaded: false,
-  };
+function App() {
+  const [fontLoaded, setFontLoaded] = useState(false);
 
-  async componentDidMount() {
-    await Font.loadAsync({
+  useEffect(() => {
+    Font.loadAsync({
       'inter-regular': require('./assets/fonts/Inter-Regular.ttf'),
-    });
+    }).then(() => setFontLoaded(true));
+  }, [])
 
-    this.setState({ fontLoaded: true });
-  }
+  if (!fontLoaded) return null;
 
-  render() {
-    const { fontLoaded } = this.state;
-
-    if (!fontLoaded) return null;
-
-    return <Home />;
-  };
+  return <Home />;
 };
 
 export default App;

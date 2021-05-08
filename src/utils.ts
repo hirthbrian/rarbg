@@ -1,9 +1,10 @@
-export enum Color {
-  Green = '#00BC63',
-  Orange = '#FF7518',
-  White = '#EFF0F0',
-  Black = '#262C34',
-  LightBlack = '#353C44',
+export enum COLORS {
+  green = '#00BC63',
+  orange = '#FF7518',
+  white = '#EFF0F0',
+  black = '#262C34',
+  lightBlack = '#353C44',
+  grey = '#999999',
 }
 
 export const searchUrl = 'https://us-central1-rarbg-d56e1.cloudfunctions.net/search';
