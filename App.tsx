@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import * as Font from 'expo-font';
 
-import Home from './src/screens/Home';
+import Main from './src/screens/Main';
 
 function App() {
   const [fontLoaded, setFontLoaded] = useState(false);
@@ -14,7 +14,7 @@ function App() {
 
   if (!fontLoaded) return null;
 
-  return <Home />;
+  return <Main />;
 };
 
 export default App;

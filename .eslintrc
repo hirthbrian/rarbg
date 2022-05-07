@@ -1,0 +1,57 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "extends": ["airbnb-typescript", "plugin:react/recommended", "prettier"],
+  "plugins": ["flowtype", "@typescript-eslint"],
+  "env": {
+    "jest": true,
+    "browser": true
+  },
+  "globals": {
+    "__DEV__": true
+  },
+  "rules": {
+    // Active rules
+    "no-console": ["error", { "allow": ["warn", "error", "log"] }],
+    "no-trailing-spaces": "warn",
+    "eol-last": "warn",
+    "no-extra-semi": "warn",
+    "no-array-constructor": "warn",
+    "use-isnan": "warn",
+    "constructor-super": "warn",
+    "for-direction": "warn",
+    "no-empty-pattern": "warn",
+    "no-unreachable": "warn",
+    "no-dupe-args": "warn",
+    "no-iterator": "warn",
+    "no-template-curly-in-string": "warn",
+    "no-return-await": "warn",
+    "no-useless-return": "warn",
+    "consistent-return": "warn",
+    "max-statements-per-line": ["warn", { "max": 1 }],
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "no-unused-expressions": "warn",
+    "import/named": "warn",
+    // Inactive Rules
+    "no-useless-constructor": "off",
+    "arrow-parens": "off",
+    "implicit-arrow-linebreak": "off",
+    "object-curly-newline": "off",
+    "object-shorthand": "off",
+    "no-bitwise": "off",
+    // Doesn"t account for distinguishing between fields and methods in TypeScript.
+    "lines-between-class-members": "off",
+    "import/no-unresolved": "off",
+    "function-paren-newline": "off",
+    "operator-linebreak": "off",
+    "react/jsx-filename-extension": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "import/prefer-default-export": "off",
+    "react/jsx-curly-brace-presence": "off",
+    "react/no-unused-state": "off",
+    "react/sort-comp": "off",
+    "react/static-property-placement": "off",
+    "jsx-a11y/anchor-is-valid": "off",
+    "import/extensions": [0, "never", { "ts": "never", "tsx": "never" }],
+    "react/jsx-props-no-spreading": "off"
+  }
+}

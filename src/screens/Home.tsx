@@ -1,15 +1,11 @@
-import React, { useState } from 'react';
-import {
-  StatusBar,
-  StyleSheet,
-  SafeAreaView,
-} from 'react-native';
-import axios from 'axios';
+import React, { useState } from "react";
+import { StatusBar, StyleSheet, SafeAreaView } from "react-native";
+import axios from "axios";
 
-import SearchBar from '../components/SearchBar';
-import TorrentList from '../components/TorrentList';
-import { RootSiblingParent } from 'react-native-root-siblings';
-import { COLORS, searchUrl } from '../utils';
+import SearchBar from "../components/SearchBar";
+import TorrentList from "../components/TorrentList";
+import { RootSiblingParent } from "react-native-root-siblings";
+import { COLORS, searchUrl } from "../utils";
 
 const styles = StyleSheet.create({
   container: {
@@ -18,7 +14,7 @@ const styles = StyleSheet.create({
   },
 });
 
-function Home() {
+const Main = () => {
   const [loading, setLoading] = useState(false);
   const [results, setResults] = useState([]);
 
@@ -41,18 +37,13 @@ function Home() {
 
   return (
     <RootSiblingParent>
-      <SafeAreaView
-        style={styles.container}
-      >
+      <SafeAreaView style={styles.container}>
         <StatusBar barStyle="light-content" />
-        <SearchBar
-          loading={loading}
-          onSearch={onSearch}
-        />
+        <SearchBar loading={loading} onSearch={onSearch} />
         <TorrentList items={results} />
       </SafeAreaView>
     </RootSiblingParent>
   );
-}
+};
 
-export default Home;
+export default Main;
