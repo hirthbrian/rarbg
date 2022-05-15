@@ -3,7 +3,7 @@ import { View, Pressable } from "react-native";
 import * as Clipboard from "expo-clipboard";
 import Toast from "react-native-root-toast";
 
-import { bytesToSize } from "../../utils";
+import { bytesToSize } from "../../../../utils";
 import { Size, Title, SubTitle, Container } from "./styles";
 
 function TorrentItem({

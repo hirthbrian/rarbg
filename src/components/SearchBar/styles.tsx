@@ -10,7 +10,7 @@ export const Container = styled.View`
 
 export const SearchBarContainer = styled.View`
   padding: 12px 15px;
-  border-radius: 30px;
+  border-radius: 10px;
   flex-direction: row;
   align-items: center;
   background-color: ${COLORS.lightBlack};
