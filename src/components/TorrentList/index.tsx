@@ -1,34 +1,31 @@
-import React from 'react';
-import {
-  FlatList,
-} from 'react-native';
+import React from "react";
+import { FlatList } from "react-native";
 
-import TorrentItem from './components/Item';
-import { TorrentItemType } from './components/Item/types';
-import { TorrentListType } from './types';
-import { Separator } from './styles';
+import TorrentItem from "./components/Item";
+import { Props } from "./components/Item/types";
+import { TorrentListType } from "./types";
+import { Separator } from "./styles";
 
-function TorrentList({ items }: TorrentListType) {
-  const renderItem = ({ item }: { item: TorrentItemType }) => (
+const TorrentList = ({ items }: TorrentListType) => {
+  const renderItem = ({ item }: { item: Props }) => (
     <TorrentItem
       title={item.title}
       size={item.size}
       magnetLink={item.magnetLink}
       category={item.category}
-      leechers={item.leechers}
-      seeders={item.seeders}
-      pubdate={item.pubdate}
     />
   );
+
+  const renderSeparator = () => <Separator />;
 
   return (
     <FlatList
       data={items}
       renderItem={renderItem}
-      ItemSeparatorComponent={() => <Separator />}
-      keyExtractor={k => k.title}
+      ItemSeparatorComponent={renderSeparator}
+      keyExtractor={(k) => k.title}
     />
   );
-}
+};
 
 export default TorrentList;
